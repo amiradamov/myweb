@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Creative Technologist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <nav class="navbar">
+      <div class="brand">RK</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <span class="sun">☀️</span>
+        <span class="moon">🌙</span>
+      </button>
+    </nav>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <p class="eyebrow">Creative Developer • Designer • Storyteller</p>
+        <h1>Hi, I’m <span class="highlight">Rohan Kumar</span></h1>
+        <p class="lede">I design and develop thoughtful digital experiences that blend clean aesthetics with purposeful storytelling. Let’s build something memorable together.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Projects</a>
+          <a class="btn ghost" href="mailto:hello@rohankumar.dev">Say Hello</a>
+        </div>
+        <div class="meta">
+          <div>
+            <p class="meta-label">Based in</p>
+            <p class="meta-value">Bengaluru, India</p>
+          </div>
+          <div>
+            <p class="meta-label">Specialty</p>
+            <p class="meta-value">Human-centered web experiences</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="card-ring"></div>
+        <div class="card">
+          <p class="card-title">Currently crafting</p>
+          <h2>Immersive portfolio narratives</h2>
+          <p class="card-body">Blending micro-interactions, accessible design, and purposeful visuals to create experiences that feel bespoke.</p>
+          <div class="pill-row">
+            <span class="pill">UI Engineering</span>
+            <span class="pill">Brand Systems</span>
+            <span class="pill">Web Animation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" id="about">
+      <div class="section-header">
+        <p class="eyebrow">About</p>
+        <h2>A designer-minded engineer who cares about the story</h2>
+      </div>
+      <div class="two-col">
+        <p>Over the last six years I’ve collaborated with founders, startups, and agencies to translate ideas into rich digital products. My work balances aesthetics with usability: I obsess over type scales, color systems, and motion while ensuring every interaction is purposeful and accessible.</p>
+        <p>I thrive at the intersection of design and engineering — pairing Figma explorations with scalable component libraries, semantic HTML, and performance-first code. When I’m not shipping features, you’ll find me sketching interfaces, experimenting with generative visuals, or writing about design systems.</p>
+      </div>
+      <div class="highlight-grid">
+        <div class="highlight-card">
+          <p class="meta-label">Focus</p>
+          <h3>Design systems & rapid prototyping</h3>
+          <p class="muted">Building cohesive visual languages, scalable UI kits, and interactive prototypes that help teams ship faster with confidence.</p>
+        </div>
+        <div class="highlight-card">
+          <p class="meta-label">Process</p>
+          <h3>Research → concept → build → polish</h3>
+          <p class="muted">Ground every decision in insight, iterate with prototypes, then refine with pixel-level craft and code-level performance.</p>
+        </div>
+        <div class="highlight-card">
+          <p class="meta-label">Toolkit</p>
+          <h3>Figma, Webflow, React, Tailwind, GSAP</h3>
+          <p class="muted">Equally comfortable in design tools and code editors, bridging the gap between vision and the shipped product.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="section-header">
+        <p class="eyebrow">Skills</p>
+        <h2>A multidisciplinary toolkit</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Frontend Engineering</h3>
+          <p class="muted">Semantic HTML, modular CSS, Web Components, accessibility, performance budgeting.</p>
+          <ul>
+            <li>React / Next.js</li>
+            <li>TypeScript</li>
+            <li>Framer Motion / GSAP</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Design</h3>
+          <p class="muted">Design systems, art direction, UI/UX strategy, rapid prototyping, microcopy.</p>
+          <ul>
+            <li>Figma & FigJam</li>
+            <li>Webflow & Lottie</li>
+            <li>Brand identity & illustration</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Collaboration</h3>
+          <p class="muted">Workshops, stakeholder alignment, documentation, mentoring engineers & designers.</p>
+          <ul>
+            <li>Design critique facilitation</li>
+            <li>Technical writing</li>
+            <li>Agile discovery & delivery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-header">
+        <p class="eyebrow">Featured Work</p>
+        <h2>Select projects that showcase craft and clarity</h2>
+      </div>
+      <div class="project-grid">
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="pill">Product design</span>
+            <span class="pill">Frontend</span>
+          </div>
+          <h3>Atlas — storytelling for climate data</h3>
+          <p class="muted">Crafted a responsive dashboard that transforms dense environmental datasets into playful, interactive narratives with purposeful motion.</p>
+          <ul class="project-tags">
+            <li>React</li>
+            <li>D3.js</li>
+            <li>Design system</li>
+          </ul>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="pill">Experience design</span>
+            <span class="pill">Prototyping</span>
+          </div>
+          <h3>Chroma — commerce with character</h3>
+          <p class="muted">Directed the visual identity and built a component library that balances bold editorial layouts with highly usable shopping flows.</p>
+          <ul class="project-tags">
+            <li>Next.js</li>
+            <li>Framer Motion</li>
+            <li>Storybook</li>
+          </ul>
+        </article>
+        <article class="project-card">
+          <div class="project-meta">
+            <span class="pill">Creative coding</span>
+            <span class="pill">Visuals</span>
+          </div>
+          <h3>Pulse — generative visual identity</h3>
+          <p class="muted">Developed a generative system that converts audio frequencies into evolving brand visuals for live performances and album drops.</p>
+          <ul class="project-tags">
+            <li>Canvas</li>
+            <li>Web Audio</li>
+            <li>Three.js</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section ribbon">
+      <div class="callout">
+        <div>
+          <p class="eyebrow">Philosophy</p>
+          <h2>Design with intention, code with empathy.</h2>
+          <p class="muted">I care about the details: accessible navigation, crisp typography, delightful interactions, and documentation that teams can trust.</p>
+        </div>
+        <a class="btn secondary" href="mailto:hello@rohankumar.dev">Book a collaboration</a>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="section-header">
+        <p class="eyebrow">Contact</p>
+        <h2>Let’s build something meaningful</h2>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <p class="muted">I’m available for select freelance engagements, product collaborations, and design leadership roles. Share a bit about your project and I’ll respond within one business day.</p>
+          <div class="contact-list">
+            <div>
+              <p class="meta-label">Email</p>
+              <a class="meta-value" href="mailto:hello@rohankumar.dev">hello@rohankumar.dev</a>
+            </div>
+            <div>
+              <p class="meta-label">Social</p>
+              <p class="meta-value">Dribbble / Behance / LinkedIn</p>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form">
+          <label>
+            Name
+            <input type="text" placeholder="Jane Doe" required />
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Project vision
+            <textarea rows="3" placeholder="Tell me about the story you want to tell" required></textarea>
+          </label>
+          <button class="btn primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Crafted with intention by Rohan Kumar. Built for the web, shaped by curiosity.</p>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
