@@ -370,7 +370,7 @@ a {
 .milestone {
   position: relative;
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 72px 1fr;
   gap: 18px;
   align-items: start;
 }
@@ -525,11 +525,11 @@ a {
   }
 
   .timeline-line {
-    left: 14px;
+    left: 20px;
   }
 
   .milestone {
-    grid-template-columns: 50px 1fr;
+    grid-template-columns: 62px 1fr;
   }
 }
 
@@ -548,12 +548,35 @@ a {
   }
 
   .timeline-line {
-    left: 12px;
+    left: 18px;
   }
 
   .milestone {
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 56px 1fr;
     gap: 14px;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateY(0);
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.35));
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(6px);
+    filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@keyframes gridShift {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-12%);
   }
 }
 
