@@ -135,13 +135,3 @@ updateProgress();
 
 window.addEventListener('scroll', updateProgress, { passive: true });
 window.addEventListener('resize', updateProgress);
-
-const form = document.querySelector('.contact-form');
-form?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const button = form.querySelector('button');
-  if (!button) return;
-  button.textContent = 'Message sent — thank you!';
-  button.disabled = true;
-  form.reset();
-});
