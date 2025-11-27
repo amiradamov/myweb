@@ -59,15 +59,16 @@ const timeline = document.querySelector('.timeline');
 const line = document.querySelector('.timeline-line');
 const progressFill = document.querySelector('.progress-fill');
 
-function createMilestone(item) {
+function createMilestone(item, index) {
   const article = document.createElement('article');
   article.className = 'milestone';
+  article.style.setProperty('--delay', `${index * 60}ms`);
 
   const marker = document.createElement('div');
   marker.className = 'marker';
   marker.innerHTML = `
-    <span class="marker-dot"></span>
     <span class="year">${item.year}</span>
+    <span class="marker-dot"></span>
   `;
 
   const card = document.createElement('div');
@@ -88,10 +89,17 @@ function createMilestone(item) {
   return article;
 }
 
+let milestoneNodes = [];
+
 function renderTimeline() {
   if (!list) return;
+  milestoneNodes = [];
   list.innerHTML = '';
-  experiences.forEach((item) => list.appendChild(createMilestone(item)));
+  experiences.forEach((item, index) => {
+    const node = createMilestone(item, index);
+    milestoneNodes.push(node);
+    list.appendChild(node);
+  });
 }
 
 function clamp(value, min, max) {
@@ -108,6 +116,17 @@ function updateProgress() {
   const percent = `${(progress * 100).toFixed(1)}%`;
   line.style.setProperty('--progress', percent);
   if (progressFill) progressFill.style.width = percent;
+
+  const centerLine = window.scrollY + window.innerHeight * 0.45;
+  let activeIndex = -1;
+  milestoneNodes.forEach((node, index) => {
+    const top = node.getBoundingClientRect().top + window.scrollY;
+    if (top <= centerLine) activeIndex = index;
+  });
+
+  milestoneNodes.forEach((node, index) => {
+    node.classList.toggle('active', index === activeIndex);
+  });
 }
 
 function observeMilestones() {
