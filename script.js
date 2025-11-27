@@ -103,7 +103,7 @@ function updateProgress() {
   const rect = timeline.getBoundingClientRect();
   const start = rect.top + window.scrollY;
   const end = start + rect.height;
-  const view = window.scrollY + window.innerHeight * 0.4;
+  const view = window.scrollY + window.innerHeight * 0.85;
   const progress = clamp((view - start) / (end - start), 0, 1);
   const percent = `${(progress * 100).toFixed(1)}%`;
   line.style.setProperty('--progress', percent);
