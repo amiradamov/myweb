@@ -257,13 +257,18 @@ a {
 .blog-card {
   position: relative;
   display: grid;
-  gap: 6px;
-  padding: 14px 16px;
+  gap: 8px;
+  padding: 18px 18px 20px;
   border-radius: 16px;
   border: 1px solid var(--outline);
-  background: linear-gradient(130deg, rgba(255, 255, 255, 0.03), rgba(124, 231, 215, 0.06));
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(140deg, rgba(6, 10, 18, 0.75), rgba(6, 12, 22, 0.85)),
+    linear-gradient(120deg, rgba(124, 231, 215, 0.12), rgba(138, 182, 255, 0.12)),
+    var(--bg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  isolation: isolate;
 }
 
 .blog-card::before {
@@ -271,18 +276,21 @@ a {
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  background: linear-gradient(120deg, rgba(124, 231, 215, 0.35), rgba(138, 182, 255, 0.3));
-  opacity: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 231, 215, 0.2), transparent 55%),
+    radial-gradient(circle at 80% 0%, rgba(138, 182, 255, 0.2), transparent 45%),
+    linear-gradient(120deg, rgba(124, 231, 215, 0.22), rgba(138, 182, 255, 0.18));
+  opacity: 0.16;
   transition: opacity 0.2s ease;
   pointer-events: none;
-  filter: blur(14px);
+  filter: blur(18px);
+  mix-blend-mode: screen;
 }
 
 .blog-card:hover,
 .blog-card:focus-visible {
   border-color: rgba(124, 231, 215, 0.5);
   transform: translateY(-2px);
-  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 22px 44px rgba(0, 0, 0, 0.32);
 }
 
 .blog-card:hover::before,
@@ -304,10 +312,25 @@ a {
   gap: 6px;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(124, 231, 215, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(124, 231, 215, 0.4);
   font-weight: 700;
   letter-spacing: 0.04em;
+}
+
+.badge.tone-a {
+  border-color: rgba(124, 231, 215, 0.7);
+  color: #c8f4ee;
+}
+
+.badge.tone-b {
+  border-color: rgba(138, 182, 255, 0.7);
+  color: #dce7ff;
+}
+
+.badge.tone-c {
+  border-color: rgba(255, 208, 124, 0.7);
+  color: #ffeccc;
 }
 
 .arrow {
@@ -382,6 +405,7 @@ a {
   position: relative;
   display: grid;
   --progress: 0%;
+  --line-offset: 148px;
 }
 
 .milestone-list {
@@ -392,14 +416,15 @@ a {
 
 .timeline-line {
   position: absolute;
-  left: 24px;
-  width: 3px;
+  left: var(--line-offset);
+  width: 4px;
   height: 100%;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
   overflow: hidden;
   border-radius: 999px;
   z-index: 0;
   pointer-events: none;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 .timeline-line::after {
@@ -417,15 +442,17 @@ a {
 .milestone {
   position: relative;
   display: grid;
-  grid-template-columns: 72px 1fr;
+  grid-template-columns: 140px 1fr;
   gap: 18px;
   align-items: start;
 }
 
 .marker {
-  display: grid;
-  justify-items: center;
-  gap: 8px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding-right: 32px;
   position: relative;
   z-index: 1;
 }
@@ -436,17 +463,22 @@ a {
   border-radius: 50%;
   background: var(--panel);
   border: 3px solid var(--accent);
-  box-shadow: 0 0 0 6px rgba(124, 231, 215, 0.18), 0 10px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 8px rgba(124, 231, 215, 0.16), 0 16px 26px rgba(0, 0, 0, 0.28);
+  flex-shrink: 0;
 }
 
 .year {
   font-weight: 800;
   letter-spacing: 0.08em;
   font-size: 14px;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--outline);
+  color: #e2e8f5;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+  transform: translateX(-10px);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .card {
@@ -456,13 +488,28 @@ a {
   border-radius: var(--radius);
   box-shadow: 0 12px 50px rgba(0, 0, 0, 0.25);
   opacity: 0;
-  transform: translateY(16px);
-  transition: transform 0.4s ease, opacity 0.4s ease, border-color 0.2s ease;
+  transform: translateY(20px) translateX(6px);
+  transition: transform 0.5s cubic-bezier(0.25, 0.9, 0.35, 1), opacity 0.5s ease, border-color 0.2s ease;
+  transition-delay: var(--delay, 0ms);
 }
 
 .milestone.visible .card {
   opacity: 1;
   transform: translateY(0);
+}
+
+.milestone.visible .year {
+  transform: translateX(0);
+}
+
+.milestone.active .marker-dot {
+  border-color: var(--accent-strong);
+  box-shadow: 0 0 0 10px rgba(138, 182, 255, 0.2), 0 16px 28px rgba(0, 0, 0, 0.35);
+}
+
+.milestone.active .card {
+  border-color: rgba(124, 231, 215, 0.35);
+  box-shadow: 0 18px 56px rgba(0, 0, 0, 0.3);
 }
 
 .card-top {
@@ -485,6 +532,12 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 12px;
+}
+
+.pill.tiny {
+  padding: 4px 8px;
+  letter-spacing: 0.06em;
+  font-size: 11px;
 }
 
 .pill.soft {
@@ -526,12 +579,16 @@ a {
     top: 0;
   }
 
-  .timeline-line {
-    left: 20px;
+  .timeline {
+    --line-offset: 122px;
   }
 
   .milestone {
-    grid-template-columns: 62px 1fr;
+    grid-template-columns: 122px 1fr;
+  }
+
+  .marker {
+    padding-right: 26px;
   }
 }
 
@@ -549,13 +606,17 @@ a {
     width: fit-content;
   }
 
-  .timeline-line {
-    left: 18px;
+  .timeline {
+    --line-offset: 104px;
   }
 
   .milestone {
-    grid-template-columns: 56px 1fr;
+    grid-template-columns: 104px 1fr;
     gap: 14px;
+  }
+
+  .marker {
+    padding-right: 20px;
   }
 }
 
