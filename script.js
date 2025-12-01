@@ -98,6 +98,15 @@ const experiences = [
 
 // Manage your blogs here. Add, remove, or reorder entries and the UI will update automatically.
 const blogs = [
+    {
+    background: "url('img/two.jpg')",
+    badge: 'AI & Bots',
+    tone: 'tone-a',
+    readTime: '10 min read',
+    title: 'A MOBILE APPLICATION FOR LEARNING SIGN LANGUAGE AS A TOOL FOR DIGITAL INCLUSION: THE EXPERIENCE OF THE JESTPLUS PROJECT',
+    description: 'The paper explores JestPlus as a digital platform that expands access to sign language education and supports inclusive communication for people with hearing impairments.',
+    link: 'https://drive.google.com/file/d/1UAL3wBpoPYK9b7hit2G1Fb7lhaVwDeGD/view?usp=sharing',
+  },
   {
     background: "url('https://miro.medium.com/v2/resize:fit:4800/format:webp/1*0HjKaLHQ_E4TRM7Zx9B8qQ.png')",
     badge: 'AI & Bots',
