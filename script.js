@@ -37,7 +37,7 @@ const experiences = [
     headline: 'Neurotime',
     role: 'Backend Developer',
     context: 'DevOps Engineer',
-    link: 'https://example.com/storytelling-dashboards',
+    link: '404.html',
     background: "url('img/neuro.jpg')",
     summary:
       'Managed and automated infrastructure, combining Proxmox virtualization, CI/CD pipelines, and cross-platform integration into a secure, scalable DevOps ecosystem.',
@@ -69,7 +69,7 @@ const experiences = [
     headline: 'EMANAT PAYMENT SYSTEM',
     role: 'Software Engineer',
     context: 'API',
-    link: '/',
+    link: '404.html',
     background: "url('img/emanat.jpg')",
     summary:
       'Contributed to API integration, parsing data, and ensuring reliable system behavior through detailed testing.',
@@ -129,8 +129,8 @@ const wallpapers = [
   "url('img/sea.jpg')",
   "url('img/dag.jpg')",
   "url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80')",
-  "url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80')",
-  "url('https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?auto=format&fit=crop&w=1600&q=80')",
+  // "url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80')",
+  // "url('https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?auto=format&fit=crop&w=1600&q=80')",
 ];
 
 function createMilestone(item, index) {
