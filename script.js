@@ -6,7 +6,7 @@ const experiences = [
     role: 'Project Lead, DevOps Engineer',
     context: 'Idea Owner',
     link: 'https://jestplus.az/',
-    background: "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')",
+    background: "url('img/jest2.jpg')",
     summary:
       'Managed project delivery for JestPlus Phase II while designing and maintaining the platform’s AWS infrastructure, CI/CD pipelines, and cloud reliability as Project Lead & DevOps.',
     bullets: [
@@ -38,7 +38,7 @@ const experiences = [
     role: 'Backend Developer',
     context: 'DevOps Engineer',
     link: 'https://example.com/storytelling-dashboards',
-    background: "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')",
+    background: "url('img/neuro.jpg')",
     summary:
       'Managed and automated infrastructure, combining Proxmox virtualization, CI/CD pipelines, and cross-platform integration into a secure, scalable DevOps ecosystem.',
     bullets: [
@@ -55,7 +55,7 @@ const experiences = [
     role: 'Backend Developer',
     context: 'Project Lead',
     link: 'https://www.jestdili.az/',
-    background: "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')",
+    background: "url('img/jest.jpg')",
     summary:
       'Led the team, designing the backend architecture and scalable database to support accurate and accessible linguistic data.',
     bullets: [
@@ -70,7 +70,7 @@ const experiences = [
     role: 'Software Engineer',
     context: 'API',
     link: '/',
-    background: "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')",
+    background: "url('img/emanat.jpg')",
     summary:
       'Contributed to API integration, parsing data, and ensuring reliable system behavior through detailed testing.',
     bullets: [
@@ -85,7 +85,7 @@ const experiences = [
     role: 'Mobile Application Developer',
     context: 'Software Engineer',
     link: 'https://github.com/amiradamov/FirmaAs',
-    background: "url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80')",
+    background: "url('img/figma.jpg')",
     summary:
       'Created Flutter-based mobile applications with seamless API integration, intuitive UI design, and requirements-driven collaboration with stakeholders.',
     bullets: [
@@ -117,13 +117,21 @@ const blogs = [
     link: 'https://medium.com/@grounded_tan_salmon_444/how-a-scalable-sign-language-learning-platform-using-aws-was-built-a-deep-dive-into-jestplus-986159f69cb1',
   },
 ];
-
 const list = document.querySelector('.milestone-list');
 const timeline = document.querySelector('.timeline');
 const line = document.querySelector('.timeline-line');
 const progressFill = document.querySelector('.progress-fill');
 const blogLinks = document.querySelector('.blog-links');
 const blogCollection = document.querySelector('.blog-collection');
+const wallpaperStack = document.querySelector('.wallpaper-stack');
+
+const wallpapers = [
+  "url('img/sea.jpg')",
+  "url('img/dag.jpg')",
+  "url('https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?auto=format&fit=crop&w=1600&q=80')",
+  "url('https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80')",
+  "url('https://images.unsplash.com/photo-1471444928139-48c5bf5173f8?auto=format&fit=crop&w=1600&q=80')",
+];
 
 function createMilestone(item, index) {
   const article = document.createElement('article');
@@ -236,6 +244,40 @@ function renderBlogs() {
   }
 }
 
+function initWallpapers() {
+  if (!wallpaperStack || !wallpapers.length) return;
+  wallpaperStack.innerHTML = '';
+
+  const frames = wallpapers.map((src, index) => {
+    const layer = document.createElement('div');
+    layer.className = 'wallpaper-frame';
+    layer.style.setProperty('--bg', src);
+    if (index === 0) layer.classList.add('active');
+    wallpaperStack.appendChild(layer);
+    return layer;
+  });
+
+  let current = 0;
+
+  const cycle = () => {
+    const next = (current + 1) % frames.length;
+    const active = frames[current];
+    const incoming = frames[next];
+
+    active.classList.remove('active');
+    active.classList.add('leaving');
+    requestAnimationFrame(() => incoming.classList.add('active'));
+
+    setTimeout(() => {
+      active.classList.remove('leaving');
+    }, 1200);
+
+    current = next;
+  };
+
+  setInterval(cycle, 15000);
+}
+
 function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
@@ -282,6 +324,7 @@ function observeMilestones() {
   milestones.forEach((node) => observer.observe(node));
 }
 
+initWallpapers();
 renderTimeline();
 observeMilestones();
 updateProgress();
